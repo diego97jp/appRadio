@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- Custom Styles -->
+      <link href="lib/angular-busy/dist/angular-busy.css" rel="stylesheet">
+      <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <!-- end Custom Styles -->
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js/jquery -->
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="lib/angular-busy/angular-busy.js"></script>
+    <script type="text/javascript" src="lib/angular-audio/app/angular.audio.js"></script>
+    <script type="text/javascript" src="lib/videogular/videogular.js"></script>
+    <script type="text/javascript" src="lib/videogular-controls/vg-controls.js"></script>
+    <!-- end custom scripts -->
+  </head>
+
+
+  <body ng-app="radioCoomevaTV">
+
+    <ion-side-menus>
+
+        <ion-side-menu-content ng-controller="NavCtrl">
+          <ion-nav-bar class="bar-positive">
+            <a ng-click="clickBack()" class="back-button" href ng-show="navigation.showBackButton">
+              <i class="button-icon ion-arrow-left-c"></i>
+            </a>
+          </ion-nav-bar>
+
+          <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-navicon-round" ng-click="showRightMenu()"></button>
+          </ion-nav-buttons>
+
+          <!--<ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-ios7-gear" ng-click="showRightMenu()">
+            </button>
+          </ion-nav-buttons>-->
+          <ion-nav-view animation="slide-left-right"></ion-nav-view>
+        </ion-side-menu-content>
+
+        <ion-side-menu side="right">
+          <ion-header-bar class="bar-stable">
+            <h1 class="title">Opciones</h1>
+          </ion-header-bar>
+          <ion-content>
+            <ion-list>
+              <ion-item menu-close="" class="item item-icon-right" nav-direction="back" href="#/app/search">
+                Buscar
+                <i class="icon ion-search"></i>
+              </ion-item>
+              <ion-item menu-close="" class="item item-icon-right" nav-direction="back" href="#/app/help">
+                Ayuda y sugerencias
+                <i class="icon ion-help-circled"></i>
+              </ion-item>
+              <ion-item menu-close="" class="item  item-icon-right" nav-direction="back" href="#/app/about">
+                Acerca de Radio Coomeva
+                <i class="icon ion-ios-mic"></i>
+              </ion-item>
+              <!--<ion-item menu-close ng-click="login()">
+                Login
+              </ion-item>
+              <ion-item menu-close href="#/app/browse">
+                Browse
+              </ion-item>
+              <ion-item menu-close href="#/app/playlists">
+                Playlists
+              </ion-item>-->
+            </ion-list>
+          </ion-content>
+        </ion-side-menu>
+
+        <!--<ion-side-menu side="right">
+          <ion-header-bar class="bar bar-header bar-dark">
+            <h1 class="title">Right Menu</h1>
+          </ion-header-bar>
+          <ion-content>
+            <ul class="list">
+              <li>
+                <a class="item" menu-close nav-clear href="#/search">Search</a>
+              </li>
+              <li>
+                <a class="item" menu-close nav-clear href="#/settings">Settings</a>
+              </li>
+            </ul>
+          </ion-content>
+        </ion-side-menu>-->
+
+      </ion-side-menus>
+
+  </body>
+
+</html>
