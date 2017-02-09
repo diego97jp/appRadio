@@ -1,0 +1,12 @@
+{
+  "name": "radioCoomevaTV",
+  "app_id": "08178edc",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
