@@ -1,0 +1,11 @@
+<ion-view hide-nav-bar="false"  ng-init="programsList.getprogramByCategory()">
+  <ion-content>
+    <div class="list">
+      <a class="item item-thumbnail-left" ng-click="showProgram(item)" ng-repeat="item in programs">
+        <img ng-src="{{item.image}}" />
+        <h2>{{item.name}}</h2>
+        <p>{{item.catName}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

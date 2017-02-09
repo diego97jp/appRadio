@@ -1,0 +1,11 @@
+<ion-view hide-nav-bar="false"  ng-init="podcastsList.getPodcastByCategory()">
+  <ion-content>
+    <div class="list">
+      <a class="item item-thumbnail-left" ng-click="showPodcast(item)" ng-repeat="item in podcasts">
+        <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" />
+        <h2>{{item.titulo}}</h2>
+        <p>{{item.subcategoria}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-view hide-nav-bar="false" hide-back-button="false">
+  <ion-content>
+    <div class="list">
+      <a class="item item-thumbnail-left" ui-sref="app.podcastCategory({categoryName: category.URL, start: 0, end: 10})" ng-repeat="category in podcastCategories">
+        <img ng-src="images/podcast/categories/{{category.image}}" />
+        <h2>{{category.name}}</h2>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

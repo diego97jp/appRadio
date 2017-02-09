@@ -1,0 +1,50 @@
+<ion-view hide-nav-bar="false" hide-back-button="true">
+    <ion-content padding="true">
+
+        <div cg-busy="radioPromises.metadata" class="list card radio-jovenes">
+            <div class="item item-avatar">
+                <img src="{{ radioInformation.metadata.current.album_art}}" />
+                <h2>{{ radioInformation.metadata.current.title}}</h2>
+                <p>{{ radioInformation.metadata.current.artist}}</p>
+            </div>
+
+            <!--<div ng-show="$cgBusyIsActive()" class="item item-image">
+              <img src="http://dummyimage.com/400x400/000/fff&text=Cargando..." />
+            </div>-->
+            <div class="item item-image">
+                <img src="{{ radioInformation.metadata.current.album_art}}" />
+            </div>
+
+            <a class="item item-icon-left assertive" ng-click="playPause()">
+                <div class="icon" ng-show="!player.canPlay"><ion-spinner icon="ios-small"></ion-spinner></div>
+                <i class="icon ion-play" ng-show="player.paused && player.canPlay"></i>
+                <i class="icon ion-pause" ng-show="!player.paused && player.canPlay"></i>
+                <div ng-show="!player.canPlay">Cargando Fuente...</div>
+                <div ng-show="!player.paused && player.canPlay">Reproduciendo</div>
+                <div ng-show="player.paused && player.canPlay">Detenido</div>
+                <div ng-show="player.error">Ha Ocurrido un error</div>
+                <span class="badge badge-assertive">Live</span>
+            </a>
+
+            <div class="item range">
+                <i class="icon ion-volume-low"></i>
+                <input type="range" min="0" max="1" step="0.01" ng-model="player.volume" />
+                <i class="icon ion-volume-high"></i>
+            </div>
+        </div>
+
+        <div class="tabs-striped radios-menu-down">
+            <div class="tabs">
+                <a ng-class="getClass('/app/adulto')" class="tab-item" ui-sref="app.adulto" ui-sref-opts="{reload: true}"   ng-click="playPause()" ng-show="player.paused && player.canPlay">
+                    <img ng-src="images/adulto-contemporaneo.jpg" alt="" />
+                </a>
+                <a ng-class="getClass('/app/instrumental')" class="tab-item" ui-sref="app.instrumental" ui-sref-opts="{reload: true}"  ng-click="playPause()" ng-show="player.paused && player.canPlay">
+                    <img ng-src="images/instrumental.jpg" alt="" />
+                </a>
+                <a ng-class="getClass('/app/jovenes')" class="tab-item" ui-sref="app.jovenes" ui-sref-opts="{reload: true}"  ng-click="playPause()" ng-show="player.paused && player.canPlay">
+                    <img ng-src="images/jovenes.jpg" alt="" />
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,17 @@
+<ion-view hide-nav-bar="false" hide-back-button="false" ng-init="listNews.getList()">
+  <ion-content>
+    <div class="list card noticia" ng-repeat="item in listNews.list">
+      <div class="item item-avatar">
+        <img ng-src="http://radio.coomeva.com.co/media/noticias/{{item.imagen}}">
+        <h2 ng-bind-html="item.nombre"></h2>
+        <p>{{item.expira}}</p>
+      </div>
+
+      <div class="item item-body">
+        <a ng-click="showNotice(item)">
+          <img class="full-image" ng-src="http://radio.coomeva.com.co/media/noticias/{{item.imagen}}">
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

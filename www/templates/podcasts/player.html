@@ -1,0 +1,64 @@
+<ion-view hide-nav-bar="false" hide-back-button="false" ng-init="podcastsList.getPodcast()">
+  <ion-content padding="true">
+
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{podcast.imagen}}" />
+        <h2>{{ podcast.titulo }}</h2>
+        <p>{{ podcast.subcategoria }}</p>
+      </div>
+
+      <!--<div ng-show="$cgBusyIsActive()" class="item item-image">
+        <img src="http://dummyimage.com/400x400/000/fff&text=Cargando..." />
+      </div>-->
+      <div class="item item-image" ng-show="isAudio">
+        <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{podcast.imagen}}" />
+      </div>
+      <div class="item item-image" ng-show="isVideo">
+        <div class="videogular-container">
+      		<videogular vg-player-ready="playerActions.videoReady($API)" vg-theme="videoPlayer.config.theme.url">
+      			<vg-media vg-src="videoPlayer.sources"></vg-media>
+      			<vg-controls>
+      				<vg-play-pause-button></vg-play-pause-button>
+      				<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+      				<vg-scrub-bar>
+      					<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      				</vg-scrub-bar>
+      				<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+      				<vg-volume>
+      					<vg-mute-button></vg-mute-button>
+      					<vg-volume-bar></vg-volume-bar>
+      				</vg-volume>
+      				<vg-fullscreen-button></vg-fullscreen-button>
+      			</vg-controls>
+      		</videogular>
+	      </div>
+      </div>
+
+      <a class="item item-icon-left assertive" ng-click="podcastPlayer.paused ? podcastPlayer.play() : podcastPlayer.pause()" ng-show="isAudio">
+        <div class="icon" ng-show="!podcastPlayer.canPlay"><ion-spinner icon="ios-small"></ion-spinner></div>
+        <i class="icon ion-play" ng-show="podcastPlayer.paused && podcastPlayer.canPlay"></i>
+        <i class="icon ion-pause" ng-show="!podcastPlayer.paused && podcastPlayer.canPlay"></i>
+        <div ng-show="!podcastPlayer.canPlay">Cargando Fuente...</div>
+        <div ng-show="!podcastPlayer.paused && podcastPlayer.canPlay">Reproduciendo</div>
+        <div ng-show="podcastPlayer.paused && podcastPlayer.canPlay">Detenido</div>
+        <div ng-show="podcastPlayer.error">Ha Ocurrido un error</div>
+        <span class="badge badge-assertive">Live</span>
+      </a>
+
+      <div class="item range" ng-show="isAudio">
+        <span class="icon" style="font-size: 15px; position: relative; top: -21px;">{{podcastPlayer.currentTime | trackTime}}</span>
+        <input type="range" min="0" max="1" step="0.01" ng-model="podcastPlayer.progress" />
+        <span class="icon" style="font-size: 15px; position: relative; top: -21px; left: -41px;">{{podcastPlayer.remaining | trackTime}}</span>
+      </div>
+
+      <div class="item range" ng-show="isAudio">
+        <i class="icon ion-volume-low"></i>
+        <input type="range" min="0" max="1" step="0.01" ng-model="podcastPlayer.volume" />
+        <i class="icon ion-volume-high"></i>
+      </div>
+  </div>
+
+
+  </ion-content>
+</ion-view>

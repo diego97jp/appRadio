@@ -1,0 +1,32 @@
+<ion-view view-title="Buscador">
+  <ion-content class="search-page">
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Buscar" ng-model="search.term">
+      </label>
+      <a class="button button-icon icon ion-search" ng-click="search.getResults(search.term)"></a>
+    </div>
+
+    <div class="list">
+      <div class="item item-divider" ng-show="search.notices">
+        Noticias
+      </div>
+      <a class="item item-thumbnail-left" ui-sref="app.noticia({noticiaID: null, noticia: item})" ng-repeat="item in search.notices">
+        <img ng-src="http://radio.coomeva.com.co/media/noticias/{{item.imagen}}">
+        <h2 ng-bind-html="item.nombre"></h2>
+        <p>{{item.expira}}</p>
+      </a>
+
+      <div class="item item-divider" ng-show="search.podcasts">
+        Podcasts
+      </div>
+      <a class="item item-thumbnail-left" ui-sref="app.podcast({podcastID: item.id, podcast: item})" ng-repeat="item in search.podcasts">
+        <img ng-src="http://radio.coomeva.com.co/.storage/podcast_27/thumb/{{item.imagen}}" />
+        <h2>{{item.titulo}}</h2>
+        <p>{{item.subcategoria}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

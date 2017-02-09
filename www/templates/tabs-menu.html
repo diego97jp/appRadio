@@ -1,0 +1,22 @@
+<ion-tabs class="tabs-icon-top" animation="slide-left">
+
+  <ion-tab title="Radios" icon="ion-radio-waves" ui-sref="app.radios" on-selected="onTabSelected()" on-deselect="onTabDeselected()">
+    <ion-nav-view name="radio-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Podcasts" icon="ion-music-note" ui-sref="app.podcasts">
+    <ion-nav-view name="podcast-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Noticias" icon="ion-ios-world-outline" ui-sref="app.noticias">
+    <ion-nav-view name="notice-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Programas" icon="ion-ios-videocam" ui-sref="app.programas">
+    <ion-nav-view name="program-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Buscar" icon="ion-ios-search-strong" ui-sref="app.search">
+    <ion-nav-view name="search-tab"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
